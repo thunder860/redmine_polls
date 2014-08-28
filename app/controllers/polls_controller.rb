@@ -3,7 +3,8 @@ class PollsController < ApplicationController
 
 
   def index
-  	@polls = Poll.all
+    @project = Project.find(params[:project_id])
+  	@polls = Poll.find(:all) # @project.polls
   end
 
   def vote
